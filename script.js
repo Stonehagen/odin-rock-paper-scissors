@@ -36,10 +36,11 @@ function game() {
 }
 
 const btnRsp = document.querySelectorAll('button');
+const results = document.querySelector('#results');
 
 btnRsp.forEach( (btn) => {
     btn.addEventListener('click', (e) => {
-        alert(playRound(e.target.id, getComputerChoice()));
+        results.textContent = playRound(e.target.id, getComputerChoice());
     });
 });
 
