@@ -12,19 +12,25 @@ function playRound(playerSelection, computerSelection) {
     
     if (playerSelection === "rock") {
         if (computerSelection === "paper") {
+            scoreComputer++;
             return "You loose. Paper wraps rock."
         } 
+        scorePlayer++;
         return "You won. Paper crushs scissors."
     } 
     else if (playerSelection === "paper") {
         if (computerSelection === "scissors") {
+            scoreComputer++;
             return "You loose. Scissors cut paper."
         } 
+        scorePlayer++;
         return "You won. paper folds rock."
     } else {
         if (computerSelection === "rock") {
+            scoreComputer++;
             return "You loose. Rock crush scissors."
         } 
+        scorePlayer++;
         return "You won. scissors cut paper."
     }
 }
@@ -37,10 +43,28 @@ function game() {
 
 const btnRsp = document.querySelectorAll('button');
 const results = document.querySelector('#results');
+const score = document.querySelector('#score');
+let scorePlayer = 0;
+let scoreComputer = 0;
+
+score.textContent = 'Player 0 : 0 Computer';
 
 btnRsp.forEach( (btn) => {
     btn.addEventListener('click', (e) => {
         results.textContent = playRound(e.target.id, getComputerChoice());
+
+        if (scorePlayer >= 5) {
+            score.textContent = "Player won!";
+            scorePlayer = 0;
+            scoreComputer = 0;
+        } else if (scoreComputer >= 5) {
+            score.textContent = "Computer won!";
+            scorePlayer = 0;
+            scoreComputer = 0;
+        } else {
+            score.textContent = 
+            `Player ${scorePlayer} : ${scoreComputer} Computer`;
+        }
     });
 });
 
