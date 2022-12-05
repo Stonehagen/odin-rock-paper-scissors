@@ -1,0 +1,47 @@
+body {
+    background-color: rgb(230, 190, 140);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.main {
+    display: flex;
+    height: 200px;
+    gap: 40px;
+}
+
+button {
+    flex-grow: 1;
+    font-size: 40px;
+    background-color: lightcoral;
+    border: solid 5px gray;
+    color: rgb(42, 42, 42);
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: lightsalmon;
+    border: solid 5px lightgoldenrodyellow;
+    color: rgb(41, 41, 41);
+}
+
+#results {
+    padding: 50px 0;
+    text-align: center;
+    font-size: 50px;
+    height: 80px;
+}
+
+#score {
+    text-align: center;
+    font-size: 200px;
+    color: rgb(41, 41, 41);
+}
+
+.score {
+    font-size: 20px;
+    display: flex;
+    gap: 150px;
+    justify-content: center;
+    font-weight: bold;
+    color: darkmagenta;
+}

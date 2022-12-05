@@ -47,23 +47,23 @@ const score = document.querySelector('#score');
 let scorePlayer = 0;
 let scoreComputer = 0;
 
-score.textContent = 'Player 0 : 0 Computer';
+score.textContent = '0 : 0';
 
 btnRsp.forEach( (btn) => {
     btn.addEventListener('click', (e) => {
         results.textContent = playRound(e.target.id, getComputerChoice());
 
+        score.textContent = 
+        `${scorePlayer} : ${scoreComputer}`;
+
         if (scorePlayer >= 5) {
-            score.textContent = "Player won!";
+            results.textContent = "Player won!";
             scorePlayer = 0;
             scoreComputer = 0;
         } else if (scoreComputer >= 5) {
-            score.textContent = "Computer won!";
+            results.textContent = "Computer won!";
             scorePlayer = 0;
             scoreComputer = 0;
-        } else {
-            score.textContent = 
-            `Player ${scorePlayer} : ${scoreComputer} Computer`;
         }
     });
 });
